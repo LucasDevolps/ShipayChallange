@@ -5,8 +5,8 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: shipay-sqlserver
     environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "FKxjHE4tNOVTvk76MFp95dZz2Ixm"
+      ACCEPT_EULA: ${ACCEPT_EULA}
+      SA_PASSWORD: ${SA_PASSWORD}
     ports:
       - "1433:1433"
     volumes:
@@ -21,7 +21,7 @@ services:
       - sqlserver
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=shipayChallangeDb;User Id=sa;Password=FKxjHE4tNOVTvk76MFp95dZz2Ixm;TrustServerCertificate=True;Encrypt=False"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=shipayChallangeDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
     ports:
       - "8080:8080"
 
