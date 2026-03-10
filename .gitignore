@@ -52,3 +52,17 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Docker
+docker-compose.override.yml
+
+# Environment
+.env
+
+# Test results
+TestResults/

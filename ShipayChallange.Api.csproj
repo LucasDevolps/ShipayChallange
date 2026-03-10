@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8924e9f8-4acd-450d-89bf-14523a316fae</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ShipayChallange.Application\**" />
+    <Compile Remove="ShipayChallange.Domain\**" />
+    <Compile Remove="ShipayChallange.Infrastructure\**" />
+    <Content Remove="ShipayChallange.Application\**" />
+    <Content Remove="ShipayChallange.Domain\**" />
+    <Content Remove="ShipayChallange.Infrastructure\**" />
+    <EmbeddedResource Remove="ShipayChallange.Application\**" />
+    <EmbeddedResource Remove="ShipayChallange.Domain\**" />
+    <EmbeddedResource Remove="ShipayChallange.Infrastructure\**" />
+    <None Remove="ShipayChallange.Application\**" />
+    <None Remove="ShipayChallange.Domain\**" />
+    <None Remove="ShipayChallange.Infrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ShipayChallange.Application\ShipayChallange.Application.csproj" />
+    <ProjectReference Include="ShipayChallange.Infrastructure\ShipayChallange.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
