@@ -12,6 +12,7 @@ O projeto foi estruturado seguindo princípios de **Clean Architecture**, separa
 
 ---
 
+```
 ShipayChallange
 ├── ShipayChallange.Api            # Camada de apresentação (Controllers / Endpoints)
 ├── ShipayChallange.Application    # Regras de aplicação e casos de uso
@@ -20,7 +21,7 @@ ShipayChallange
 ├── docker-compose.yml             # Infraestrutura local
 ├── .env                           # Variáveis de ambiente
 └── .github/workflows              # CI/CD com GitHub Actions
-
+```
 
 Essa abordagem facilita:
 
