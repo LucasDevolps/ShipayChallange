@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShipayChallange.Application.DTOs.Request;
 using ShipayChallange.Application.DTOs.Response;
+using ShipayChallange.Application.Interfaces;
 using ShipayChallange.Domain.Entities;
 using ShipayChallange.Infrastructure.Interfaces;
 using ShipayChallange.Infrastructure.Persistence;
 
 namespace ShipayChallange.Application.Services;
 
-public sealed class UserService(AppDbContext context, IPasswordGenerator passwordGenerator)
+public sealed class UserService(AppDbContext context, IPasswordGenerator passwordGenerator) : IUserService
 {
     private readonly AppDbContext _context = context;
     private readonly IPasswordGenerator _passwordGenerator = passwordGenerator;

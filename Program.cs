@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ShipayChallange.Application.Interfaces;
 using ShipayChallange.Application.Services;
 using ShipayChallange.Infrastructure.Interfaces;
 using ShipayChallange.Infrastructure.Persistence;
@@ -16,8 +17,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<RoleService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPasswordGenerator, PasswordGenerator>();
 
 var app = builder.Build();

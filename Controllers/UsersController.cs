@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShipayChallange.Application.DTOs.Request;
+using ShipayChallange.Application.Interfaces;
 using ShipayChallange.Application.Services;
 
 namespace ShipayChallange.Api.Controllers;
@@ -7,9 +8,9 @@ namespace ShipayChallange.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class UsersController(UserService service) : ControllerBase
+public sealed class UsersController(IUserService service) : ControllerBase
 {
-    private readonly UserService _service = service;
+    private readonly IUserService _service = service;
 
     [HttpGet]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
